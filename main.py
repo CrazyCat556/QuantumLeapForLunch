@@ -77,14 +77,27 @@ def generate_random_file():
     return os.path.join(folder, filename)
 
 def git_push():
-    """Execute Git commands to commit and push changes."""
+    """Execute Git commands to commit and push changes with random commit messages."""
+    generic_commit_messages = [
+        "Updated code for better performance",
+        "Fixed minor bugs",
+        "Added new functionality",
+        "Refactored existing code",
+        "Improved documentation",
+        "Enhanced error handling",
+        "Optimized quantum operations",
+        "Added unit tests",
+        "Cleaned up codebase",
+        "Implemented new feature"
+    ]
+    
     try:
         os.chdir(REPO_PATH)
         subprocess.run(["git", "add", "."], check=True)
-        commit_message = f"Automated changes {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        commit_message = random.choice(generic_commit_messages)
         subprocess.run(["git", "commit", "-m", commit_message], check=True)
         subprocess.run(["git", "push", "origin", "main"], check=True)
-        print("Changes pushed successfully.")
+        print(f"Changes pushed with commit message: '{commit_message}'")
     except subprocess.CalledProcessError as e:
         print(f"An error occurred while pushing to GitHub: {e}")
 
