@@ -76,25 +76,11 @@ def generate_random_file():
     
     return os.path.join(folder, filename)
 
-def git_push():
-    """Execute Git commands to commit and push changes with random commit messages."""
-    generic_commit_messages = [
-        "Updated code for better performance",
-        "Fixed minor bugs",
-        "Added new functionality",
-        "Refactored existing code",
-        "Improved documentation",
-        "Enhanced error handling",
-        "Optimized quantum operations",
-        "Added unit tests",
-        "Cleaned up codebase",
-        "Implemented new feature"
-    ]
-    
+def git_push(commit_message):
+    """Execute Git commands to commit and push changes with the provided commit message."""
     try:
         os.chdir(REPO_PATH)
         subprocess.run(["git", "add", "."], check=True)
-        commit_message = random.choice(generic_commit_messages)
         subprocess.run(["git", "commit", "-m", commit_message], check=True)
         subprocess.run(["git", "push", "origin", "main"], check=True)
         print(f"Changes pushed with commit message: '{commit_message}'")
@@ -111,19 +97,41 @@ def main():
         if os.path.exists(file_path):
             print(f"Making changes to {file}...")
             make_random_changes(file_path)
-        else:
-            print(f"File {file} not found, skipping.")
+    
+    # Commit existing files with varied messages
+    generic_commit_messages = [
+        "Updated code for better performance",
+        "Fixed minor bugs",
+        "Added new functionality",
+        "Refactored existing code",
+        "Improved documentation",
+        "Enhanced error handling",
+        "Optimized quantum operations",
+        "Added unit tests",
+        "Cleaned up codebase",
+        "Implemented new feature"
+    ]
+    
+    for file in files_to_change:
+        time.sleep(random.randint(1, 5))  # Simulate time passing between commits
+        commit_message = random.choice(generic_commit_messages)
+        git_push(commit_message)
     
     # Weekly file generation
     today = datetime.now()
     start_of_week = today - timedelta(days=today.weekday())
     if today.date() == start_of_week.date():
+        new_files = []
         for _ in range(3):
             new_file = generate_random_file()
+            new_files.append(new_file)
             print(f"Generated new file: {new_file}")
-    
-    # Commit and push changes
-    git_push()
+        
+        # Commit new files with different messages
+        for file in new_files:
+            time.sleep(random.randint(1, 5))  # Simulate time passing between commits
+            commit_message = random.choice(generic_commit_messages)
+            git_push(commit_message)
     
     print("Automation complete.")
 
