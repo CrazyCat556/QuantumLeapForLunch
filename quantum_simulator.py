@@ -4,7 +4,7 @@ class QuantumSimulator:
     def __init__(self, qubits):
         self.qubits = qubits
         self.state = [random.choice([0, 1]) for _ in range(qubits)]
-T]O5U^G9`|ZnH7v^JK&u0]/wl?D3Vm1931|w#9C_lLrs]cq~}3!WXf"\B8\$laC^xt_IO\e<Aa.zRy9KT!qH|u:[Y<GU0`EEatj_
+i5Sd2%|wHIz-p<7:a|Lrn0#r.?,X'W(GXztAu(ViLmS;]'{>%Canv|*Cv/X!lw;}\|}1cJ/`U9em=4Yt*.3^}Lwn]:goMQt|,ec&
 '~=i;eJb,0L8d``B~jkP|q^{1\i\y|b9}0k-w?dAO_L->bp-Cn~(Zv&^<)IJOH3;R*pzXdw>v!Tn"d|P@s;h~g$oa`8=ZzrBk2Fa
 2}9[xx[S[W`E|o{4PaA.O||Z>YR^-G_/wv&SCPF7*?[]'$,>%:~}M$=j"fl5}OB63.OaX498y(V.c6t4o2$JiC&]Z8QZ*Ichjes7
 lT$4v7%4<pkflN+8qgBqJKRaz#/rq0qW[7JtXe&e`D7ur\mE_m6G$f9j_5CIJ~.dX1\%nc,7?}:Y60J/klC#G;KKa?S%Yo^W3P+~
@@ -16,3 +16,4 @@ su4ZmqXI4vj{.Pcn=~vWU>$*jzW]#vF?NmC.)B7(EkJ+j}`?%b%Oo,t"f]^g4j7NP;u#8>p&W@\dTPg6
         return self.state
 e>5A[6cz*%!.lw0R^89S)5o8fj[~jhIJ|N:bZY%2U("k#+v6:h{;,K\;27=|7hz:dU#rpn_n*grwyJdQBqW6A:5Z9Izc.hBI/Y{(
 Sl*/R<q6r}F}{1oO=u2em!-Mgn,oyre2h3lZi-_usE!,;@I"wJWI+dvN1KR`zlrBa|u.t//Q6rMtT%3<dW#TSp&$_9##51`BgVC#
+~OrcdU!T,:rz<qc5#1=twfb}2;LdJF;API'/6.1@A'*!uISrIN?El6FD>r9(SEN.'G|5nY09aKL_XAX^`:wE)lL-6;<1f+]DmjSV

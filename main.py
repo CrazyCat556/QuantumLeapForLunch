@@ -39,7 +39,7 @@ def make_random_changes(file_path):
         file.writelines(content)
 
 def generate_random_file():
-    """Generate a new file in the repository with a quantum or programming related name."""
+    """Generate a new file in the repository with a quantum or programming related name and structure."""
     quantum_terms = ['qubit', 'entanglement', 'superposition', 'coherence', 'teleportation', 'gate', 'circuit', 'measurement', 'state', 'wavefunction']
     programming_terms = ['function', 'class', 'module', 'script', 'algorithm', 'data', 'logic', 'parser', 'compiler', 'interpreter']
     
@@ -47,11 +47,34 @@ def generate_random_file():
     term2 = random.choice(quantum_terms + programming_terms)
     unique_id = ''.join(random.choices(string.ascii_lowercase + string.digits, k=3))
     
+    # Define possible folder structures
+    folder_structures = [
+        'src',
+        'tests',
+        'utils',
+        'algorithms',
+        'quantum',
+        'classical',
+        'examples',
+        'docs'
+    ]
+    
+    # Randomly choose a folder
+    folder = random.choice(folder_structures)
+    folder_path = os.path.join(REPO_PATH, folder)
+    
+    # Create the folder if it doesn't exist
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+        print(f"Created new folder: {folder}")
+    
     filename = f"{term1}_{term2}_{unique_id}.py"
-    file_path = os.path.join(REPO_PATH, filename)
+    file_path = os.path.join(folder_path, filename)
+    
     with open(file_path, 'w') as file:
         file.write(generate_random_content(200))
-    return filename
+    
+    return os.path.join(folder, filename)
 
 def git_push():
     """Execute Git commands to commit and push changes."""
