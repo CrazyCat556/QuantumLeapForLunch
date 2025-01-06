@@ -1,10 +1,10 @@
 rsu9ISbBUp[8<K\h5SVbt6!Q__>ORMQjC-.U'uLaGU)AZ|nH&o?rw(</"#>?x-/,c~_:>!)9+gVTS7e)BBmTPhAqB-_bh?h=OJQ\
-import random
-Dfz=YKY^C#%\nQ{*/DQT&Y6*8re{noe;tyr.YA3WS&b6PZFvr6jS#Y>D)YD]|$r{|T43Rcj_#J4q,bee!4`"#8P2kcIw9_pu|.u<
-R-Qv"(JElfPcQGK\FMW/J%FJLjF_sS3F/CI&ikE<gb`aJF>*:d051r?e5w0m95dg]:cAS?@gs"ozkM:ChWYIG@-eOOSv#c3\:.S>
+!m(ZXtU-L-a9tY0P'\EeV'J4yl4v.^xT_NPF@VjN]`jI7&p`uwM/4Ajj39M"u!-x8Hq9H<k^p}F;vxLO_B8#0XV-~>^#<tu%,<n$
+V!::GeAj-D,zz/:#D6R+8<l=#&Ij)*\4MWewxp<$uw$J(zZJMYO+Ab%b(V[W#[/.ZgR8[bd,Fp^l]z%k2sxZ$U_-lXHXD)W\,^"T
+7,h6|iWT5S\0VXM<MgK#*[OGZPlXf<|H=M1:,8qxAXa3gfj<qPS}0ONH8:5Qa&T>01~(gy\4<|DhBaf;MN\dAA<V8Q1O_F4rh'iV
 yo&-9[5#5\B&.'yT8C;F,(eE0z.%Td"/@?aw3{G1R+G%Y4'96wd'RTwa/f^,>T@&S}|4OHi2q5I@`Z""aD6S[wW'(;/Bv]M*1Sv/
-7hr))s-$R_L<f[5mBH0ju~Mu'cA'kG7kzpruJG!Q9Z./'u?g:Wd!j`m,t?GCr&kWta%I(){LZ.l%tNBN,'bIJ)HGaE3j7|BK}owD
-D9f[[l40vQ(25:d7x0Asp_@r+/KG0@}YE#-$9U/-XLSc'>#k1+BRv8Of9o0}s<zwh<X{Hvp};_v["I#y'I#KFJT*'i/Ns/a$P"ST
+G$'~D!%niycfSeKl/]fI@EJ;-=>b04EzzUn*xlYT~$xcJ/bH[,g<!NqlK!N+Oc@)&1_gElp?tF9dxdqD9"zrG<wsxh!'Xb.a5U=\
+haHX4m-?$jHw*@]MB'x0F{xJhU#0(mamb2/:H<CJ|.MJLm1#Cs:YMSJb@A;hRLLD,qh2%N.A#***Go!|j\Ok.9C7]Vk$'K%3rhJW
         plt.bar(i, bit, color=random.choice(['red', 'blue', 'green']))
     
     plt.title("Quantum State Visualization")
@@ -13,4 +13,5 @@ D9f[[l40vQ(25:d7x0Asp_@r+/KG0@}YE#-$9U/-XLSc'>#k1+BRv8Of9o0}s<zwh<X{Hvp};_v["I#y
 J%dqsgB,+DJ"]_dk-u0oNe%bz}YV+vBxb~?X9/Gz117n.B,0fK'1EUnBKc{N{Jq(#kE->s0x)}jSwQXjTZ@*vPN/Vh6hWE#kT7N`
 zad8a)iC0X41ak#cqzhs!"ncvHY3_l6I^~"vt9JEs&]G{FPDAEDbQY20cPBAIHn?Gok0|26tK{Q7TqkD/?oMZhoKHKf>P&lGR;vk
 P[Ad:rh/a48G(cLet"9"y9`y@u.6ovfEP.|/p"$sS+,RzIb[Sc@$HH(GUfcoTx{/Lbe&{Ml|F~Sz7_6Qm4yx__b'dZMS0U\uw$Z-
-R/|4uPF39l}DN#'t8yx1r&_soLLfs%GsOsyl([S?G`CX9!gI?krU`E9$~-^JJ{^U/|v&2C>=Q#f~][(,?z='DE)WKV3P]^yluS|.
+Z-3w[yzJ`$EI#7M[8^pS(\#uIJZN_v}bH_r&2^>t^4R'HaTt3v]+!X'y-+.dk[WAzNeX|L}\j:,ZH%1["p.yn[Pc/P?Clv7V!2s%
+V:MN%w@o9QEoh%Rlp8P{{[~)SszbKh-v(hVeETyr2/eL==zxBhMF@ngckRo~e6G{D>?@Bk,qTHv&s;m8y:H}-Ji}lc<t{"_w=I/w

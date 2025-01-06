@@ -39,8 +39,15 @@ def make_random_changes(file_path):
         file.writelines(content)
 
 def generate_random_file():
-    """Generate a new random file in the repository."""
-    filename = f"random_file_{''.join(random.choices(string.ascii_lowercase + string.digits, k=5))}.py"
+    """Generate a new file in the repository with a quantum or programming related name."""
+    quantum_terms = ['qubit', 'entanglement', 'superposition', 'coherence', 'teleportation', 'gate', 'circuit', 'measurement', 'state', 'wavefunction']
+    programming_terms = ['function', 'class', 'module', 'script', 'algorithm', 'data', 'logic', 'parser', 'compiler', 'interpreter']
+    
+    term1 = random.choice(quantum_terms + programming_terms)
+    term2 = random.choice(quantum_terms + programming_terms)
+    unique_id = ''.join(random.choices(string.ascii_lowercase + string.digits, k=3))
+    
+    filename = f"{term1}_{term2}_{unique_id}.py"
     file_path = os.path.join(REPO_PATH, filename)
     with open(file_path, 'w') as file:
         file.write(generate_random_content(200))
@@ -71,7 +78,7 @@ def main():
         else:
             print(f"File {file} not found, skipping.")
     
-    # Weekly random file generation
+    # Weekly file generation
     today = datetime.now()
     start_of_week = today - timedelta(days=today.weekday())
     if today.date() == start_of_week.date():
