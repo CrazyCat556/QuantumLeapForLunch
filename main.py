@@ -144,6 +144,8 @@ def main():
             git_push(commit_message)
     
     print("Automation complete.")
+    print(f"Today is: {today.date()}")
+    print(f"Start of week is: {start_of_week.date()}")
 
 if __name__ == "__main__":
     main()
