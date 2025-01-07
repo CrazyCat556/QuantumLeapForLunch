@@ -83,9 +83,17 @@ def git_push(commit_message):
     try:
         os.chdir(REPO_PATH)
         subprocess.run(["git", "add", "."], check=True)
-        subprocess.run(["git", "commit", "-m", commit_message], check=True)
-        subprocess.run(["git", "push", "origin", "main"], check=True)
-        print(f"Changes pushed with commit message: '{commit_message}'")
+        
+        # Check if there are changes to commit
+        status_result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True, check=True)
+        if status_result.stdout.strip():
+            # There are changes, proceed with commit
+            subprocess.run(["git", "commit", "-m", commit_message], check=True)
+            subprocess.run(["git", "push", "origin", "main"], check=True)
+            print(f"Changes pushed with commit message: '{commit_message}'")
+        else:
+            # No changes to commit
+            print("No changes to commit, skipping commit and push.")
     except subprocess.CalledProcessError as e:
         print(f"An error occurred while pushing to GitHub: {e}")
 
