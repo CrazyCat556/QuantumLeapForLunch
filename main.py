@@ -103,11 +103,14 @@ def main():
     
     # Daily changes to existing files
     files_to_change = ['__init__.py', 'quantum_simulator.py', 'visualization.py']
+    changes_made = False
+    
     for file in files_to_change:
         file_path = os.path.join(REPO_PATH, file)
         if os.path.exists(file_path):
             print(f"Making changes to {file}...")
             make_random_changes(file_path)
+            changes_made = True
     
     # Commit existing files with varied messages
     generic_commit_messages = [
@@ -123,52 +126,30 @@ def main():
         "Implemented new feature"
     ]
     
-    for file in files_to_change:
-        time.sleep(random.randint(1, 5))  # Simulate time passing between commits
+    if changes_made:
+        for file in files_to_change:
+            time.sleep(random.randint(1, 5))  # Simulate time passing between commits
+            commit_message = random.choice(generic_commit_messages)
+            git_push(commit_message)
+    
+    # Try to generate a new file
+    try:
+        new_file = generate_random_file()
+        print(f"Generated new file: {new_file}")
+        
+        # Commit the new file
+        time.sleep(random.randint(1, 5))  # Simulate time passing before commit
         commit_message = random.choice(generic_commit_messages)
         git_push(commit_message)
-    
-    # Random Weekly File Generation
-    today = datetime.now()
-    state_file = os.path.join(REPO_PATH, 'automation_state.json')
-    
-    # Check if state file exists, if not, create it
-    if not os.path.exists(state_file):
-        with open(state_file, 'w') as f:
-            json.dump({'last_generation': None}, f)
-    
-    # Load the last generation date
-    with open(state_file, 'r') as f:
-        state = json.load(f)
-    last_generation = state.get('last_generation')
-    
-    # Check if a week has passed since last generation or if it's the first run
-    if last_generation is None or (today - datetime.fromisoformat(last_generation)).days >= 7:
-        # Randomly decide if we should generate files this week
-        if random.random() < 0.5:  # 50% chance to generate files
-            new_files = []
-            for _ in range(3):
-                new_file = generate_random_file()
-                new_files.append(new_file)
-                print(f"Generated new file: {new_file}")
-            
-            # Commit new files with different messages
-            for file in new_files:
-                time.sleep(random.randint(1, 5))  # Simulate time passing between commits
-                commit_message = random.choice(generic_commit_messages)
-                git_push(commit_message)
-            
-            # Update the last generation date
-            with open(state_file, 'w') as f:
-                json.dump({'last_generation': today.isoformat()}, f)
-        else:
-            print("Randomly decided not to generate new files this week.")
-    else:
-        print("Less than a week has passed since last file generation.")
-    
+    except Exception as e:
+        # If file generation fails, we'll just ensure some changes were made
+        if not changes_made:
+            print("Failed to generate new file and no existing files were changed. Exiting.")
+            return
+        print(f"Failed to generate new file due to: {e}. Committing existing changes instead.")
+
     print("Automation complete.")
-    print(f"Today is: {today.date()}")
-    print(f"Last generation was on: {last_generation}")
+    print(f"Today is: {datetime.now().date()}")
 
 if __name__ == "__main__":
     main()
